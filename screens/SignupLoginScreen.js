@@ -24,7 +24,7 @@ export default class SignupLoginScreen extends React.Component {
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        return Alert.alert("Successfully Login");
+        return Alert.alert("Successfully Loged In");
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -35,7 +35,7 @@ export default class SignupLoginScreen extends React.Component {
 
   userSignUp = (username, password, confirmPassword) => {
     if (password !== confirmPassword) {
-      return Alert.alert("password doesn't match\nCheck your password.");
+      return Alert.alert("Wrong password");
     } else {
       firebase
         .auth()
@@ -136,7 +136,7 @@ export default class SignupLoginScreen extends React.Component {
               
               <TextInput
                 style={styles.formTextInput}
-                placeholder={"Your username"}
+                placeholder={"Email Id"}
                 keyboardType={"email-address"}
                 onChangeText={(text) => {
                   this.setState({
@@ -203,7 +203,7 @@ export default class SignupLoginScreen extends React.Component {
         <View style={styles.profileContainer}>
           <SharingIcon />
           <Text style={styles.title}>Barter App</Text>
-          <Text style={{ color: "#ff8a65" }}> Trade your stuff </Text>
+          <Text style={{ color: "Black" }}> Trade in your things</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Text
@@ -296,13 +296,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 60,
     fontWeight: "300",
-    color: "#ff9800",
+    color: "black",
   },
   loginBox: {
     width: 300,
     height: 35,
     borderBottomWidth: 1.5,
-    borderColor: "grey",
+    borderColor: "purple",
     fontSize: 20,
     marginBottom: 20,
     marginTop: 5,
@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
     width: "75%",
     height: 35,
     alignSelf: "center",
-    borderColor: "grey",
+    borderColor: "purple",
     borderRadius: 10,
     borderWidth: 1,
     marginTop: 20,
